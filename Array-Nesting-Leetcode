@@ -1,0 +1,24 @@
+int m=0,count=0;
+    int arrayNesting(vector<int>& nums) {
+        
+        for(int i=0;i<nums.size();i++)
+        {
+            count = 0;
+            dfs(nums,i);
+            
+        }
+        return m;
+    }
+    
+    void dfs(vector<int>& nums,int in)
+    {
+        if(nums[in]==INT_MIN)
+        {
+            m = max(count,m);
+            return;  
+        }
+        int tmp = nums[in];
+        nums[in] = INT_MIN;
+        count++;
+        dfs(nums,tmp);
+    }
