@@ -1,0 +1,39 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+	ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+
+    int t, i, count1, count2;
+    string str;
+
+    cin >> t;
+    
+    while(t--)
+    { 
+        count1 = 0;
+        count2 = 0;
+        cin >> str;
+
+        for(i=0; i<str.length(); i++)
+        {
+            if(str[i] == '1')
+                count1 += 1;
+        }
+        for(i=0; i<str.length(); i++)
+        {
+            if(str[i] == '1' && str[i+1] == '1')
+                count2 += 1;
+        }
+
+        if((count1 - 1) == count2)
+            cout << "YES" << '\n';
+        else
+            cout << "NO" << '\n';
+        
+    }
+	return 0;
+}
