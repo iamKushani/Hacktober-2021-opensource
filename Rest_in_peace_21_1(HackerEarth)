@@ -1,0 +1,32 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+	ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+
+    int t, n;
+
+    cin >> t;
+
+    while(t--)
+    {
+        cin >> n;
+
+        if(n % 21 == 0)
+            cout << "The streak is broken!" << '\n';
+        else
+        {
+            string s = to_string(n);
+            size_t find_21 = s.find("21");
+            if(find_21 != string::npos)
+                cout << "The streak is broken!" << '\n';
+            else
+                cout << "The streak lives still in our heart!" << '\n';
+        }   
+    }
+
+	return 0;
+}
