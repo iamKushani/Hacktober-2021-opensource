@@ -1,0 +1,31 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+
+    string str;
+    int i, count1 = 0, max = 0;
+    char ans;
+
+    getline(cin, str);
+
+    sort(str.begin(), str.end());
+
+    for(i=0; i<str.length(); i+=count1)
+    {
+        count1 = count(str.begin(), str.end(), str[i]);
+        if(count1 > max)
+        {
+            max = count1;
+            ans = str[i];
+        }
+    }
+
+    cout << ans << " " << max;
+
+    return 0;
+}
